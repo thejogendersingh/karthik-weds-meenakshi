@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarav weds Ananya — Modern Indian Luxury Wedding Experience</title>
+  <title>Karthik weds Meenakshi — South Indian Wedding Invitation</title>
 
   <!-- SEO & Favicon Links -->
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="apple-touch-icon" href="assets/logo.png" />
-  <meta property="og:title" content="Aarav weds Ananya — Royal Indian Wedding Invitation" />
-  <meta property="og:description" content="You are cordially invited to celebrate the royal matrimony of Aarav weds Ananya at The Oberoi Udaivilas, Udaipur." />
+  <meta property="og:title" content="Karthik weds Meenakshi — South Indian Wedding Invitation" />
+  <meta property="og:description" content="You are cordially invited to celebrate the matrimony of Karthik weds Meenakshi." />
   <meta property="og:image" content="assets/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="assets/logo.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,17 +32,17 @@
       theme: {
         extend: {
           colors: {
-            ivory: { 50: '#FFFDF9', 100: '#FAF6EE', 200: '#F4EAD4' },
-            champagne: '#F4EAD4',
-            royal: { green: '#1C352D', greenLight: '#2C4A3E', greenDark: '#0F211A', gold: '#C5A059' },
-            burgundy: '#8C263E',
-            charcoal: { DEFAULT: '#1A1918', muted: '#4F4B46' }
+            maroon: { DEFAULT: '#7A001E', dark: '#5A0016', light: '#9E0B2E' },
+            gold: { DEFAULT: '#D4AF37', light: '#F3D69A', dark: '#B58E29' },
+            peacock: { DEFAULT: '#004E64', dark: '#003443' },
+            silk: { 50: '#FFFDF7', 100: '#FAF5E8', 200: '#F5EBD6' }
           },
           fontFamily: {
             serif: ['Cormorant Garamond', 'serif'],
             cursive: ['Great Vibes', 'cursive'],
-            display: ['Instrument Serif', 'serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif'],
+            tamil: ['Noto Sans Tamil', 'sans-serif'],
+            telugu: ['Noto Sans Telugu', 'sans-serif']
           }
         }
       }
@@ -53,271 +51,372 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-ivory-100 text-charcoal font-sans antialiased overflow-x-hidden">
+<body class="bg-[#FFFDF7] text-[#222222] font-sans antialiased overflow-x-hidden lang-en">
 
-  <!-- 3D ROYAL PALACE DOUBLE DOOR ENTRANCE OVERLAY -->
+  <!-- TOP FIXED FLOATING LANGUAGE SWITCHER BAR -->
+  <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-1 p-1.5 rounded-full bg-[#7A001E]/95 text-white backdrop-blur-md shadow-luxury border border-[#D4AF37]/60">
+    <button onclick="setLanguage('en')" id="lang-btn-en" class="lang-pill active px-3.5 py-1 rounded-full text-xs font-bold tracking-wider transition-all">English</button>
+    <button onclick="setLanguage('ta')" id="lang-btn-ta" class="lang-pill px-3.5 py-1 rounded-full text-xs font-bold tracking-wider transition-all">தமிழ்</button>
+    <button onclick="setLanguage('te')" id="lang-btn-te" class="lang-pill px-3.5 py-1 rounded-full text-xs font-bold tracking-wider transition-all">తెలుగు</button>
+  </div>
+
+  <!-- 3D PALACE DOUBLE DOOR ENTRANCE OVERLAY -->
   <div id="door-overlay" class="door-overlay">
     <!-- Left Door Panel -->
     <div id="left-door" class="door-panel left-door">
       <div class="door-img-wrapper left-img-wrapper">
-        <img src="assets/door_bg.jpg" alt="Royal Door Left" class="door-img" />
+        <img src="assets/door_bg.jpg" alt="Door Left" class="door-img" />
       </div>
     </div>
 
     <!-- Right Door Panel -->
     <div id="right-door" class="door-panel right-door">
       <div class="door-img-wrapper right-img-wrapper">
-        <img src="assets/door_bg.jpg" alt="Royal Door Right" class="door-img" />
+        <img src="assets/door_bg.jpg" alt="Door Right" class="door-img" />
       </div>
     </div>
 
-    <!-- TOP HEADER - Centered Single Line Ganesha Mantra (Compact Traditional Badge) -->
+    <!-- TOP HEADER Mantra -->
     <div class="door-top-header">
       <div class="mantra-badge">
-        <span class="text-[#C5A059] text-[10px]">✤</span>
-        <span>|| SHREE GANESHAY NAMAH ||</span>
-        <span class="text-[#C5A059] text-[10px]">✤</span>
+        <span class="text-[#D4AF37] text-[10px]">✤</span>
+        <span data-i18n="door_mantra">|| SHREE GANESHAY NAMAH ||</span>
+        <span class="text-[#D4AF37] text-[10px]">✤</span>
       </div>
     </div>
 
-    <!-- MIDDLE CENTER - Clean Logo Image Only Door Entrance Button -->
+    <!-- MIDDLE CENTER Seal Button -->
     <div id="door-seal-btn" class="door-center-seal cursor-pointer">
-      <img src="assets/logo.png" alt="Aarav weds Ananya Logo" class="w-36 sm:w-44 h-auto object-contain drop-shadow-2xl hover:scale-105 transition-all duration-300 filter brightness-105" />
+      <img src="assets/logo.png" alt="Karthik weds Meenakshi Logo" class="w-36 sm:w-44 h-auto object-contain drop-shadow-2xl hover:scale-105 transition-all duration-300 filter brightness-105" />
     </div>
   </div>
 
-  <!-- 60FPS PETAL SIMULATION CANVAS - FLOATING ON TOP OF ALL SECTIONS (z-[40]) -->
+  <!-- FLOATING PETALS CANVAS -->
   <canvas id="petals-canvas" class="fixed inset-0 pointer-events-none z-[40] opacity-80"></canvas>
 
-  <!-- CUSTOM MAGNETIC CURSOR -->
+  <!-- CUSTOM CURSOR -->
   <div id="custom-cursor-dot" class="custom-cursor-dot"></div>
   <div id="custom-cursor-ring" class="custom-cursor-ring"><span id="cursor-text"></span></div>
 
-  <!-- SLEEK CIRCULAR FLOATING AUDIO CONTROL BUTTON (ICON ONLY) -->
-  <button id="audio-toggle-btn" aria-label="Toggle Music" class="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-royal-green text-ivory-100 backdrop-blur-md rounded-full shadow-luxury border border-royal-gold/40 hover:scale-110 transition-all p-0">
-    <i data-lucide="volume-2" class="w-5 h-5 text-royal-gold"></i>
+  <!-- FLOATING AUDIO CONTROL BUTTON -->
+  <button id="audio-toggle-btn" aria-label="Toggle Music" class="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-[#7A001E] text-[#FFFDF7] backdrop-blur-md rounded-full shadow-luxury border-2 border-[#D4AF37] hover:scale-110 transition-all p-0">
+    <i data-lucide="volume-2" class="w-5 h-5 text-[#D4AF37]"></i>
   </button>
 
-  <!-- HERO SECTION - OPTION 1 (100dvh) + OPTION 3 (SAFARI LOW HEIGHT MEDIA QUERY FIT) -->
-  <section class="hero-section relative flex flex-col items-center justify-center pt-16 pb-16 px-4 sm:px-8 overflow-hidden bg-ivory-100">
-    <!-- Background Floral Image - 100% Full Bleed Edge-to-Edge -->
+  <!-- HERO SECTION -->
+  <section class="hero-section relative flex flex-col items-center justify-center pt-20 pb-16 px-4 sm:px-8 overflow-hidden bg-[#FFFDF7]">
+    <!-- Background Hero Video - Continuous Loop -->
     <div class="absolute inset-0 z-0 pointer-events-none opacity-100 overflow-hidden">
-      <img src="assets/hero_bg.jpg" alt="Palace Archway Background" class="w-full h-full object-cover filter brightness-105 contrast-105" />
+      <video id="hero-bg-video" autoplay loop muted playsinline class="w-full h-full object-cover filter brightness-105 contrast-105">
+        <source src="assets/hero_bg.MP4" type="video/mp4" />
+      </video>
     </div>
 
-    <!-- Main Cohesive Column Content -->
+    <!-- Hero Content -->
     <div class="hero-container flex flex-col items-center text-center max-w-4xl mx-auto z-10 my-auto space-y-4 sm:space-y-6">
       
       <!-- Top Mantra & Ganesha Medallion -->
       <div class="flex flex-col items-center gap-3">
-        <div class="flex items-center gap-2 px-5 py-2 rounded-full bg-ivory-100/90 backdrop-blur-md border border-royal-gold/50 shadow-card text-xs sm:text-sm uppercase tracking-[0.28em] text-royal-green hero-anim-mantra">
-          <span class="w-2.5 h-2.5 rounded-full bg-royal-gold animate-ping"></span>
-          <span class="font-serif font-semibold text-royal-gold tracking-widest">|| SHREE GANESHAY NAMAH ||</span>
+        <div class="flex items-center gap-2 px-5 py-2 rounded-full bg-[#FFFDF7]/95 backdrop-blur-md border border-[#D4AF37]/60 shadow-card text-xs sm:text-sm uppercase tracking-[0.2em] text-[#7A001E] hero-anim-mantra">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-ping"></span>
+          <span class="font-serif font-bold text-[#D4AF37] tracking-widest" data-i18n="hero_mantra">|| SHREE GANESHAY NAMAH ||</span>
         </div>
 
-        <!-- Lord Ganesha Avatar Medallion -->
-        <div class="hero-ganesha-wrapper relative w-24 h-24 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-tr from-royal-gold via-amber-300 to-royal-gold shadow-glow hero-anim-ganesha">
-          <div class="relative w-full h-full rounded-full overflow-hidden border-2 border-ivory-100 bg-[#E3E8E5] flex items-center justify-center">
+        <!-- Lord Ganesha Avatar -->
+        <div class="hero-ganesha-wrapper relative w-24 h-24 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-tr from-[#D4AF37] via-amber-300 to-[#D4AF37] shadow-glow hero-anim-ganesha">
+          <div class="relative w-full h-full rounded-full overflow-hidden border-2 border-white bg-[#E3E8E5] flex items-center justify-center">
             <img src="assets/ganesha_avatar.jpg" alt="Lord Ganesha" class="w-full h-full object-cover scale-125 filter brightness-105 contrast-105" />
           </div>
         </div>
       </div>
 
-      <!-- Main Editorial Text & Couple Names (Aarav / weds / Ananya) -->
-      <div class="space-y-2 sm:space-y-4 pt-1">
-        <p class="hero-subtext font-serif italic text-xl sm:text-3xl md:text-4xl text-royal-gold font-medium tracking-wide hero-anim-sub">
-          Invite You To Celebrate The Royal Matrimony Of
+      <!-- Couple Names & Subtitle -->
+      <div class="space-y-2 sm:space-y-3 pt-1">
+        <p class="hero-subtext font-serif italic text-lg sm:text-2xl md:text-3xl text-[#7A001E] font-semibold tracking-wide hero-anim-sub" data-i18n="hero_subtext">
+          Invite You To Celebrate The Matrimony Of
         </p>
 
-        <!-- 3 Distinct Lines: Line 1: Aarav, Line 2: weds, Line 3: Ananya -->
-        <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-light text-royal-green tracking-tight leading-tight drop-shadow-md hero-anim-title flex flex-col items-center justify-center">
-          <span class="hero-title-main font-normal text-royal-green">Aarav</span>
-          <span class="hero-title-weds font-cursive text-royal-gold text-3xl sm:text-5xl md:text-6xl font-normal py-0.5 my-1">weds</span>
-          <span class="hero-title-main font-normal text-royal-green">Ananya</span>
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-[#7A001E] tracking-tight leading-tight drop-shadow-md hero-anim-title flex flex-col items-center justify-center">
+          <span class="hero-title-main font-bold text-[#7A001E]" data-i18n="groom_name">Karthik</span>
+          <span class="hero-title-weds font-cursive text-[#D4AF37] text-3xl sm:text-5xl md:text-6xl font-normal py-0.5 my-1" data-i18n="weds_label">weds</span>
+          <span class="hero-title-main font-bold text-[#7A001E]" data-i18n="bride_name">Meenakshi</span>
         </h1>
       </div>
 
-      <!-- Date & Venue 2 Separate Distinct Badges -->
+      <!-- Date & Venue -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1 hero-anim-badges">
-        <span class="hero-badge flex items-center gap-2 bg-ivory-100/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-royal-gold/40 shadow-card text-xs sm:text-base font-sans text-royal-green font-semibold uppercase tracking-wider">
-          <i data-lucide="calendar" class="w-4 h-4 text-royal-gold"></i>
-          28th November 2026
+        <span class="hero-badge flex items-center gap-2 bg-[#FFFDF7]/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-[#D4AF37]/50 shadow-card text-xs sm:text-base font-sans text-[#7A001E] font-semibold uppercase tracking-wider">
+          <i data-lucide="calendar" class="w-4 h-4 text-[#D4AF37]"></i>
+          <span data-i18n="hero_date">28th November 2026</span>
         </span>
-        <span class="hidden sm:inline text-royal-gold font-serif text-xl">•</span>
-        <span class="hero-badge flex items-center gap-2 bg-ivory-100/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-royal-gold/40 shadow-card text-xs sm:text-base font-sans text-royal-green font-semibold uppercase tracking-wider">
-          <i data-lucide="map-pin" class="w-4 h-4 text-royal-gold"></i>
-          The Oberoi Udaivilas, Udaipur
+        <span class="hidden sm:inline text-[#D4AF37] font-serif text-xl">•</span>
+        <span class="hero-badge flex items-center gap-2 bg-[#FFFDF7]/95 backdrop-blur-md px-5 py-2.5 rounded-full border border-[#D4AF37]/50 shadow-card text-xs sm:text-base font-sans text-[#7A001E] font-semibold uppercase tracking-wider">
+          <i data-lucide="map-pin" class="w-4 h-4 text-[#D4AF37]"></i>
+          <span data-i18n="hero_venue">Taj Falaknuma Palace, Hyderabad</span>
         </span>
       </div>
 
       <!-- CTA Button -->
       <div class="pt-2 hero-anim-btn">
-        <button onclick="scrollToId('countdown-section')" class="hero-btn px-9 py-4 bg-royal-green text-ivory-100 font-sans text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold rounded-full shadow-luxury border-2 border-royal-gold hover:scale-105 transition-all inline-block">
-          Open Royal Invitation
+        <button onclick="scrollToId('countdown-section')" class="hero-btn px-8 py-3.5 bg-[#7A001E] text-white font-sans text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold rounded-full shadow-luxury border-2 border-[#D4AF37] hover:scale-105 transition-all inline-block" data-i18n="open_invitation">
+          Open Invitation
         </button>
       </div>
 
     </div>
   </section>
 
-  <!-- ROMANTIC SCRATCH & REVEAL COUNTDOWN SECTION -->
+  <!-- SCRATCH & REVEAL COUNTDOWN SECTION -->
   <section id="countdown-section" class="py-16 px-4 sm:px-8 max-w-3xl mx-auto relative z-10 -mt-6">
-    <div id="scratch-card-wrapper" class="relative rounded-3xl overflow-hidden bg-[#FAF6EE] p-6 sm:p-10 border border-[#E7D6B7] shadow-luxury text-center scroll-reveal">
+    <div id="scratch-card-wrapper" class="relative rounded-3xl overflow-hidden bg-[#FAF5E8] p-6 sm:p-10 border-2 border-[#D4AF37]/60 shadow-luxury text-center scroll-reveal">
       
-      <!-- SLEEK HORIZONTAL GOLD SCRATCH PILL OVERLAY -->
+      <!-- Scratch Overlay Canvas -->
       <canvas id="scratch-canvas" class="absolute inset-0 w-full h-full z-20 cursor-pointer rounded-3xl touch-none transition-opacity duration-700"></canvas>
       
-      <!-- REVEALED SAVE THE DATE CARD & COUNTDOWN TICKER UNDERNEATH -->
+      <!-- Revealed Content -->
       <div class="relative z-10 space-y-8">
-        
-        <!-- TOP SAVE THE DATE BOX -->
-        <div class="relative p-6 sm:p-8 rounded-2xl bg-[#FFFDF9] border border-[#E7D6B7] shadow-sm max-w-lg mx-auto flex flex-col items-center">
-          <span class="font-sans text-xs sm:text-sm uppercase tracking-[0.28em] text-[#6B7C68] font-bold">SAVE THE DATE</span>
-          <h2 class="font-cursive text-3xl sm:text-4xl text-[#8C263E] font-semibold mt-1 tracking-wide">28th November 2026</h2>
+        <div class="relative p-6 sm:p-8 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37]/50 shadow-sm max-w-lg mx-auto flex flex-col items-center">
+          <span class="font-sans text-xs sm:text-sm uppercase tracking-[0.28em] text-[#004E64] font-bold" data-i18n="save_the_date">SAVE THE DATE</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-[#7A001E] font-bold mt-1 tracking-wide" data-i18n="hero_date">28th November 2026</h2>
         </div>
 
-        <!-- 4 COUNTDOWN TILES -->
+        <!-- 4 Tickers -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-xl mx-auto">
-          <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-[#E7D6B7] shadow-sm flex flex-col items-center">
-            <span id="cnt-days" class="font-serif text-4xl sm:text-6xl font-bold text-[#8C263E]">00</span>
-            <span class="font-sans text-xs uppercase tracking-widest text-[#6B7C68] font-bold mt-1.5">DAYS</span>
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37]/40 shadow-sm flex flex-col items-center">
+            <span id="cnt-days" class="font-serif text-4xl sm:text-5xl font-bold text-[#7A001E]">00</span>
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#004E64] font-bold mt-1" data-i18n="cnt_days">DAYS</span>
           </div>
-          <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-[#E7D6B7] shadow-sm flex flex-col items-center">
-            <span id="cnt-hours" class="font-serif text-4xl sm:text-6xl font-bold text-[#8C263E]">00</span>
-            <span class="font-sans text-xs uppercase tracking-widest text-[#6B7C68] font-bold mt-1.5">HOURS</span>
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37]/40 shadow-sm flex flex-col items-center">
+            <span id="cnt-hours" class="font-serif text-4xl sm:text-5xl font-bold text-[#7A001E]">00</span>
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#004E64] font-bold mt-1" data-i18n="cnt_hours">HOURS</span>
           </div>
-          <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-[#E7D6B7] shadow-sm flex flex-col items-center">
-            <span id="cnt-mins" class="font-serif text-4xl sm:text-6xl font-bold text-[#8C263E]">00</span>
-            <span class="font-sans text-xs uppercase tracking-widest text-[#6B7C68] font-bold mt-1.5">MINUTES</span>
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37]/40 shadow-sm flex flex-col items-center">
+            <span id="cnt-mins" class="font-serif text-4xl sm:text-5xl font-bold text-[#7A001E]">00</span>
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#004E64] font-bold mt-1" data-i18n="cnt_mins">MINUTES</span>
           </div>
-          <div class="p-5 rounded-2xl bg-[#FFFDF9] border border-[#E7D6B7] shadow-sm flex flex-col items-center">
-            <span id="cnt-secs" class="font-serif text-4xl sm:text-6xl font-bold text-[#8C263E]">00</span>
-            <span class="font-sans text-xs uppercase tracking-widest text-[#6B7C68] font-bold mt-1.5">SECONDS</span>
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37]/40 shadow-sm flex flex-col items-center">
+            <span id="cnt-secs" class="font-serif text-4xl sm:text-5xl font-bold text-[#7A001E]">00</span>
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#004E64] font-bold mt-1" data-i18n="cnt_secs">SECONDS</span>
           </div>
         </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- EVENTS SCHEDULE SECTION - HERO LEAF GREEN PASTEL TONE BACKGROUND -->
-  <section id="events" class="py-20 px-4 sm:px-8 bg-[#E2ECE6]/90 relative z-10 border-t border-b border-[#C8DACF]">
-    <div class="max-w-4xl mx-auto space-y-12">
+  <!-- ANIMATED STORY PLAYER SECTION -->
+  <section id="story-section" class="py-16 px-4 sm:px-8 max-w-4xl mx-auto relative z-10 scroll-reveal">
+    <div class="text-center space-y-2 mb-8">
+      <span class="font-sans text-[11px] uppercase tracking-[0.3em] text-[#D4AF37] font-bold" data-i18n="story_tag">PRECIOUS MOMENTS</span>
+      <h2 class="font-cursive text-5xl sm:text-6xl text-[#7A001E] font-medium tracking-wide" data-i18n="story_title">Our Journey Together</h2>
+      <p class="font-serif italic text-base sm:text-lg text-[#004E64] font-medium" data-i18n="story_subtitle">Precious moments written in stars &amp; sacred vows</p>
       
-      <!-- Section Title Header with Soft Medium Cursive Calligraphy Font -->
+      <!-- Kolam Motif Divider -->
+      <div class="flex items-center justify-center gap-3 pt-1 text-[#D4AF37]">
+        <span class="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
+        <span class="font-serif text-sm text-[#7A001E]">✤</span>
+        <span class="font-serif text-lg text-[#D4AF37]">❀</span>
+        <span class="font-serif text-sm text-[#7A001E]">✤</span>
+        <span class="w-16 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
+      </div>
+    </div>
+
+    <!-- STORY CARD PLAYER CONTAINER -->
+    <div class="relative rounded-3xl overflow-hidden bg-black/90 border-2 border-[#D4AF37] shadow-luxury max-w-lg mx-auto">
+      <!-- Progress Bar Top -->
+      <div class="absolute top-3 inset-x-4 z-30 flex items-center gap-2">
+        <div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
+          <div id="story-bar-0" class="h-full bg-[#D4AF37] w-0 transition-all duration-100"></div>
+        </div>
+        <div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
+          <div id="story-bar-1" class="h-full bg-[#D4AF37] w-0 transition-all duration-100"></div>
+        </div>
+        <div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
+          <div id="story-bar-2" class="h-full bg-[#D4AF37] w-0 transition-all duration-100"></div>
+        </div>
+      </div>
+
+      <!-- Story Viewport -->
+      <div id="story-viewport" class="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden select-none">
+        <!-- Slide 1 -->
+        <div class="story-slide active absolute inset-0 transition-opacity duration-700 opacity-100">
+          <img src="assets/story1.jpg" alt="Story 1" class="w-full h-full object-cover filter brightness-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+          <div class="absolute bottom-14 inset-x-6 z-20 text-white space-y-1">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 drop-shadow-md" data-i18n="s1_title">The First Encounter</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 leading-relaxed max-w-md drop-shadow-sm" data-i18n="s1_desc">Two souls met under the shade of ancient banyan trees. What started with a shared smile turned into endless conversations.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="story-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none">
+          <img src="assets/story2.jpg" alt="Story 2" class="w-full h-full object-cover filter brightness-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+          <div class="absolute bottom-14 inset-x-6 z-20 text-white space-y-1">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 drop-shadow-md" data-i18n="s2_title">Under the Stars</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 leading-relaxed max-w-md drop-shadow-sm" data-i18n="s2_desc">Surrounded by glowing diyas and jasmine garlands, a quiet promise was made to walk together forever.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="story-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none">
+          <img src="assets/story3.jpg" alt="Story 3" class="w-full h-full object-cover filter brightness-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+          <div class="absolute bottom-14 inset-x-6 z-20 text-white space-y-1">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 drop-shadow-md" data-i18n="s3_title">The Sacred Knot</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 leading-relaxed max-w-md drop-shadow-sm" data-i18n="s3_desc">With the blessings of our elders, sacred Vedic mantras, and Talambralu showers, our journey of seven lifetimes begins.</p>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button onclick="prevStory(event)" aria-label="Previous Story" class="absolute top-1/2 left-3 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-all border border-white/20">
+          ‹
+        </button>
+        <button onclick="nextStory(event)" aria-label="Next Story" class="absolute top-1/2 right-3 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-all border border-white/20">
+          ›
+        </button>
+      </div>
+
+      <!-- Clean Floating Bottom Controls -->
+      <div class="p-3 bg-black/60 backdrop-blur-md flex items-center justify-between border-t border-[#D4AF37]/30 text-white text-xs">
+        <div class="flex items-center gap-3">
+          <button onclick="toggleStoryPlay()" id="story-play-btn" class="w-7 h-7 rounded-full bg-[#D4AF37] text-[#7A001E] flex items-center justify-center font-bold text-xs hover:scale-105 transition-all">
+            ⏸
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="goToStory(0)" class="w-8 h-8 rounded-lg overflow-hidden border-2 border-[#D4AF37]">
+            <img src="assets/story1.jpg" alt="Thumb 1" class="w-full h-full object-cover" />
+          </button>
+          <button onclick="goToStory(1)" class="w-8 h-8 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#D4AF37]">
+            <img src="assets/story2.jpg" alt="Thumb 2" class="w-full h-full object-cover" />
+          </button>
+          <button onclick="goToStory(2)" class="w-8 h-8 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#D4AF37]">
+            <img src="assets/story3.jpg" alt="Thumb 3" class="w-full h-full object-cover" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS SCHEDULE SECTION -->
+  <section id="events" class="py-20 px-4 sm:px-8 bg-[#FAF5E8]/90 relative z-10 border-t border-b border-[#D4AF37]/40">
+    <div class="max-w-4xl mx-auto space-y-10">
+      
+      <!-- Section Title -->
       <div class="text-center space-y-2 scroll-reveal">
-        <h2 class="font-cursive text-5xl sm:text-6xl text-[#8C263E] font-medium tracking-wide">Events Schedule</h2>
+        <h2 class="font-cursive text-5xl sm:text-6xl text-[#7A001E] font-medium tracking-wide" data-i18n="events_title">Events Schedule</h2>
         
-        <!-- TRADITIONAL INDIAN GOLD FLOURISH DIVIDER -->
-        <div class="flex items-center justify-center gap-3 pt-1 text-royal-gold">
-          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-r from-transparent via-royal-gold/80 to-royal-gold"></span>
-          <span class="font-serif text-sm text-[#8C263E]">✤</span>
-          <span class="font-serif text-lg text-royal-gold">❀</span>
-          <span class="font-serif text-sm text-[#8C263E]">✤</span>
-          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-l from-transparent via-royal-gold/80 to-royal-gold"></span>
+        <!-- Kolam Flourish -->
+        <div class="flex items-center justify-center gap-3 pt-1 text-[#D4AF37]">
+          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
+          <span class="font-serif text-sm text-[#7A001E]">✤</span>
+          <span class="font-serif text-lg text-[#D4AF37]">❀</span>
+          <span class="font-serif text-sm text-[#7A001E]">✤</span>
+          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
         </div>
       </div>
 
-      <!-- Vertical Stack of 5 Traditional Indian Wedding Function Cards -->
-      <div class="space-y-8">
+      <!-- Stack of 5 Event Cards -->
+      <div class="space-y-6">
         
-        <!-- 1. Paath Bithai & Ganesh Pujan (path-bathai.png) -->
-        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#C8DACF] transition-all hover:scale-[1.01] duration-500 min-h-[260px] sm:min-h-[320px] flex items-center justify-center p-6 sm:p-10 text-center text-white scroll-reveal">
-          <img src="assets/path-bathai.png" alt="Paath Bithai" class="absolute inset-0 w-full h-full object-fill filter brightness-[0.82] contrast-[1.05]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10"></div>
+        <!-- 1. Paath Bithai & Ganesh Pujan -->
+        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#D4AF37]/40 transition-all hover:scale-[1.01] duration-300 min-h-[240px] sm:min-h-[280px] flex items-center justify-center p-6 text-center text-white scroll-reveal">
+          <img src="assets/path-bathai.png" alt="Ganesh Pujan" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#5A0016]/90 via-black/40 to-black/20"></div>
           
-          <div class="relative z-10 space-y-3 max-w-xl">
-            <h3 class="font-cursive text-4xl sm:text-5xl font-medium text-white drop-shadow-md tracking-wide">Paath Bithai</h3>
-            <p class="font-serif italic text-sm sm:text-base text-ivory-100 font-light drop-shadow-md">A sacred prayer to begin our wedding journey</p>
+          <div class="relative z-10 space-y-2 max-w-xl">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 tracking-wide" data-i18n="e1_name">Ganesh Pujan &amp; Muhurtham</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 font-light" data-i18n="e1_desc">A sacred prayer to begin our wedding journey</p>
             
-            <div class="pt-4 space-y-1 text-xs sm:text-sm font-sans tracking-wider text-ivory-100 font-light drop-shadow-md">
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300">DATE</div>
-              <div>FRI - Nov 27, 2026</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">TIME</div>
-              <div>10:00 AM onwards</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">VENUE</div>
-              <div>Poolside Lawns, The Oberoi Udaivilas</div>
+            <div class="pt-3 space-y-1 text-xs font-sans tracking-wider text-white/90">
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37]" data-i18n="lbl_date">DATE</div>
+              <div data-i18n="e1_date">Fri, 27 Nov 2026</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_time">TIME</div>
+              <div data-i18n="e1_time">10:00 AM onwards</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_venue">VENUE</div>
+              <div data-i18n="e1_venue">Poolside Gardens, Falaknuma Palace</div>
             </div>
           </div>
         </div>
 
-        <!-- 2. Haldi & Mehndi Ceremony (haldi.png) -->
-        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#C8DACF] transition-all hover:scale-[1.01] duration-500 min-h-[260px] sm:min-h-[320px] flex items-center justify-center p-6 sm:p-10 text-center text-white scroll-reveal">
-          <img src="assets/haldi.png" alt="Haldi & Mehndi Ceremony" class="absolute inset-0 w-full h-full object-fill filter brightness-[0.82] contrast-[1.05]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10"></div>
+        <!-- 2. Haldi & Nalangu Ceremony -->
+        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#D4AF37]/40 transition-all hover:scale-[1.01] duration-300 min-h-[240px] sm:min-h-[280px] flex items-center justify-center p-6 text-center text-white scroll-reveal">
+          <img src="assets/haldi.png" alt="Haldi & Nalangu" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#5A0016]/90 via-black/40 to-black/20"></div>
 
-          <div class="relative z-10 space-y-3 max-w-xl">
-            <h3 class="font-cursive text-4xl sm:text-5xl font-medium text-white drop-shadow-md tracking-wide">Haldi &amp; Mehndi Ceremony</h3>
-            <p class="font-serif italic text-sm sm:text-base text-ivory-100 font-light drop-shadow-md">Auspicious turmeric blessings, henna designs &amp; marigold showers</p>
+          <div class="relative z-10 space-y-2 max-w-xl">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 tracking-wide" data-i18n="e2_name">Haldi &amp; Nalangu Ceremony</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 font-light" data-i18n="e2_desc">Auspicious turmeric blessings, henna designs &amp; marigold showers</p>
             
-            <div class="pt-4 space-y-1 text-xs sm:text-sm font-sans tracking-wider text-ivory-100 font-light drop-shadow-md">
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300">DATE</div>
-              <div>FRI - Nov 27, 2026</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">TIME</div>
-              <div>02:00 PM onwards</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">VENUE</div>
-              <div>Mango Grove Lawns, Udaivilas</div>
+            <div class="pt-3 space-y-1 text-xs font-sans tracking-wider text-white/90">
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37]" data-i18n="lbl_date">DATE</div>
+              <div data-i18n="e2_date">Fri, 27 Nov 2026</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_time">TIME</div>
+              <div data-i18n="e2_time">02:00 PM onwards</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_venue">VENUE</div>
+              <div data-i18n="e2_venue">Mango Orchard Lawns, Falaknuma Palace</div>
             </div>
           </div>
         </div>
 
-        <!-- 3. Sundowner Sangeet (sangeet.png) -->
-        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#C8DACF] transition-all hover:scale-[1.01] duration-500 min-h-[260px] sm:min-h-[320px] flex items-center justify-center p-6 sm:p-10 text-center text-white scroll-reveal">
-          <img src="assets/sangeet.png" alt="Sundowner Sangeet" class="absolute inset-0 w-full h-full object-fill filter brightness-[0.82] contrast-[1.05]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10"></div>
+        <!-- 3. Sundowner Sangeet -->
+        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#D4AF37]/40 transition-all hover:scale-[1.01] duration-300 min-h-[240px] sm:min-h-[280px] flex items-center justify-center p-6 text-center text-white scroll-reveal">
+          <img src="assets/sangeet.png" alt="Sundowner Sangeet" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#5A0016]/90 via-black/40 to-black/20"></div>
 
-          <div class="relative z-10 space-y-3 max-w-xl">
-            <h3 class="font-cursive text-4xl sm:text-5xl font-medium text-white drop-shadow-md tracking-wide">Sundowner Sangeet</h3>
-            <p class="font-serif italic text-sm sm:text-base text-ivory-100 font-light drop-shadow-md">An evening of song, dance and laughter under the setting sun</p>
+          <div class="relative z-10 space-y-2 max-w-xl">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 tracking-wide" data-i18n="e3_name">Sundowner Sangeeth</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 font-light" data-i18n="e3_desc">An evening of song, dance and laughter under the setting sun</p>
             
-            <div class="pt-4 space-y-1 text-xs sm:text-sm font-sans tracking-wider text-ivory-100 font-light drop-shadow-md">
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300">DATE</div>
-              <div>FRI - Nov 27, 2026</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">TIME</div>
-              <div>07:00 PM onwards</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">VENUE</div>
-              <div>Grand Sunset Lawns, The Oberoi Udaivilas</div>
+            <div class="pt-3 space-y-1 text-xs font-sans tracking-wider text-white/90">
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37]" data-i18n="lbl_date">DATE</div>
+              <div data-i18n="e3_date">Fri, 27 Nov 2026</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_time">TIME</div>
+              <div data-i18n="e3_time">07:00 PM onwards</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_venue">VENUE</div>
+              <div data-i18n="e3_venue">Grand Ballroom, Taj Falaknuma</div>
             </div>
           </div>
         </div>
 
-        <!-- 4. Baarat Swagat (baarat-swagat.png) -->
-        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#C8DACF] transition-all hover:scale-[1.01] duration-500 min-h-[260px] sm:min-h-[320px] flex items-center justify-center p-6 sm:p-10 text-center text-white scroll-reveal">
-          <img src="assets/baarat-swagat.png" alt="Baarat Swagat" class="absolute inset-0 w-full h-full object-fill filter brightness-[0.82] contrast-[1.05]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10"></div>
+        <!-- 4. Mapillai Azhaippu / Baarat Swagat -->
+        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#D4AF37]/40 transition-all hover:scale-[1.01] duration-300 min-h-[240px] sm:min-h-[280px] flex items-center justify-center p-6 text-center text-white scroll-reveal">
+          <img src="assets/baarat-swagat.png" alt="Mapillai Azhaippu" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#5A0016]/90 via-black/40 to-black/20"></div>
 
-          <div class="relative z-10 space-y-3 max-w-xl">
-            <h3 class="font-cursive text-4xl sm:text-5xl font-medium text-white drop-shadow-md tracking-wide">Baarat Swagat</h3>
-            <p class="font-serif italic text-sm sm:text-base text-ivory-100 font-light drop-shadow-md">The grand royal welcome of the groom &amp; procession family blessings</p>
+          <div class="relative z-10 space-y-2 max-w-xl">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 tracking-wide" data-i18n="e4_name">Mapillai Azhaippu &amp; Swagat</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 font-light" data-i18n="e4_desc">The grand welcome of the groom &amp; procession family blessings</p>
             
-            <div class="pt-4 space-y-1 text-xs sm:text-sm font-sans tracking-wider text-ivory-100 font-light drop-shadow-md">
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300">DATE</div>
-              <div>SAT - Nov 28, 2026</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">TIME</div>
-              <div>04:30 PM onwards</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">VENUE</div>
-              <div>Palace Entrance &amp; Courtyard</div>
+            <div class="pt-3 space-y-1 text-xs font-sans tracking-wider text-white/90">
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37]" data-i18n="lbl_date">DATE</div>
+              <div data-i18n="e4_date">Sat, 28 Nov 2026</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_time">TIME</div>
+              <div data-i18n="e4_time">04:30 PM onwards</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_venue">VENUE</div>
+              <div data-i18n="e4_venue">Palace Courtyard &amp; Main Gateway</div>
             </div>
           </div>
         </div>
 
-        <!-- 5. The Royal Pheras (phera.jpg) -->
-        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#C8DACF] transition-all hover:scale-[1.01] duration-500 min-h-[260px] sm:min-h-[320px] flex items-center justify-center p-6 sm:p-10 text-center text-white scroll-reveal">
-          <img src="assets/phera.jpg" alt="The Royal Pheras" class="absolute inset-0 w-full h-full object-fill filter brightness-[0.82] contrast-[1.05]" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10"></div>
+        <!-- 5. Kalyanam & Mangalyadharanam -->
+        <div class="relative rounded-3xl overflow-hidden shadow-luxury border border-[#D4AF37]/40 transition-all hover:scale-[1.01] duration-300 min-h-[240px] sm:min-h-[280px] flex items-center justify-center p-6 text-center text-white scroll-reveal">
+          <img src="assets/phera.jpg" alt="Kalyanam" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.75] contrast-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#5A0016]/90 via-black/40 to-black/20"></div>
 
-          <div class="relative z-10 space-y-3 max-w-xl">
-            <h3 class="font-cursive text-4xl sm:text-5xl font-medium text-white drop-shadow-md tracking-wide">The Royal Pheras</h3>
-            <p class="font-serif italic text-sm sm:text-base text-ivory-100 font-light drop-shadow-md">The sacred seven vows around the holy fire on Lake Pichola</p>
+          <div class="relative z-10 space-y-2 max-w-xl">
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-200 tracking-wide" data-i18n="e5_name">Kalyanam &amp; Mangalyadharanam</h3>
+            <p class="font-sans text-xs sm:text-sm text-white/95 font-light" data-i18n="e5_desc">The sacred wedding vows and tying of the holy Mangalsutra</p>
             
-            <div class="pt-4 space-y-1 text-xs sm:text-sm font-sans tracking-wider text-ivory-100 font-light drop-shadow-md">
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300">DATE</div>
-              <div>SAT - Nov 28, 2026</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">TIME</div>
-              <div>07:00 PM onwards</div>
-              <div class="uppercase tracking-[0.2em] font-semibold text-amber-300 pt-2">VENUE</div>
-              <div>Lakeside Mandap, Udaivilas</div>
+            <div class="pt-3 space-y-1 text-xs font-sans tracking-wider text-white/90">
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37]" data-i18n="lbl_date">DATE</div>
+              <div data-i18n="e5_date">Sat, 28 Nov 2026</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_time">TIME</div>
+              <div data-i18n="e5_time">07:00 PM onwards</div>
+              <div class="uppercase tracking-[0.2em] font-bold text-[#D4AF37] pt-1" data-i18n="lbl_venue">VENUE</div>
+              <div data-i18n="e5_venue">Durbar Hall &amp; Mandap</div>
             </div>
           </div>
         </div>
@@ -327,63 +426,54 @@
     </div>
   </section>
 
-  <!-- SHAHI PARIVAAR / ROYAL HOSTS & FAMILY BLESSINGS SECTION -->
-  <section id="hosts" class="py-20 px-4 sm:px-8 bg-ivory-100 relative z-10 border-b border-[#E7D6B7]">
-    <div class="max-w-3xl mx-auto space-y-10 text-center">
+  <!-- FAMILY BLESSINGS SECTION -->
+  <section id="hosts" class="py-20 px-4 sm:px-8 bg-[#FFFDF7] relative z-10 border-b border-[#D4AF37]/40">
+    <div class="max-w-3xl mx-auto space-y-8 text-center">
       
-      <!-- Section Title Header -->
       <div class="space-y-2 scroll-reveal">
-        <span class="font-sans text-[11px] uppercase tracking-[0.3em] text-[#6B7C68] font-semibold">WITH THE BLESSINGS OF OUR ELDERS</span>
-        <h2 class="font-cursive text-5xl sm:text-6xl text-[#8C263E] font-medium tracking-wide">Shahi Parivaar</h2>
+        <span class="font-sans text-[11px] uppercase tracking-[0.3em] text-[#004E64] font-bold" data-i18n="hosts_sub">WITH THE BLESSINGS OF OUR ELDERS</span>
+        <h2 class="font-cursive text-5xl sm:text-6xl text-[#7A001E] font-medium tracking-wide" data-i18n="hosts_title">Elders &amp; Parivaar</h2>
         
-        <!-- TRADITIONAL INDIAN GOLD FLOURISH DIVIDER -->
-        <div class="flex items-center justify-center gap-3 pt-1 text-royal-gold">
-          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-r from-transparent via-royal-gold/80 to-royal-gold"></span>
-          <span class="font-serif text-sm text-[#8C263E]">✤</span>
-          <span class="font-serif text-lg text-royal-gold">❀</span>
-          <span class="font-serif text-sm text-[#8C263E]">✤</span>
-          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-l from-transparent via-royal-gold/80 to-royal-gold"></span>
+        <div class="flex items-center justify-center gap-3 pt-1 text-[#D4AF37]">
+          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
+          <span class="font-serif text-sm text-[#7A001E]">✤</span>
+          <span class="font-serif text-lg text-[#D4AF37]">❀</span>
+          <span class="font-serif text-sm text-[#7A001E]">✤</span>
+          <span class="w-14 sm:w-24 h-[1.5px] bg-gradient-to-l from-transparent via-[#D4AF37] to-[#D4AF37]"></span>
         </div>
       </div>
 
-      <!-- SPACIOUS & AIRY SINGLE CARD BOX -->
-      <div class="relative rounded-3xl p-8 sm:p-14 bg-[#FFFDF9] border border-[#E7D6B7] shadow-luxury max-w-2xl mx-auto space-y-10 text-center scroll-reveal">
-        <!-- Corner Studs -->
-        <span class="absolute top-4 left-4 text-xs text-royal-gold font-serif pointer-events-none">✤</span>
-        <span class="absolute top-4 right-4 text-xs text-royal-gold font-serif pointer-events-none">✤</span>
-        <span class="absolute bottom-4 left-4 text-xs text-royal-gold font-serif pointer-events-none">✤</span>
-        <span class="absolute bottom-4 right-4 text-xs text-royal-gold font-serif pointer-events-none">✤</span>
+      <div class="relative rounded-3xl p-8 sm:p-12 bg-[#FFFDF7] border-2 border-[#D4AF37]/50 shadow-luxury max-w-2xl mx-auto space-y-8 text-center scroll-reveal">
+        <span class="absolute top-4 left-4 text-xs text-[#D4AF37]">✤</span>
+        <span class="absolute top-4 right-4 text-xs text-[#D4AF37]">✤</span>
+        <span class="absolute bottom-4 left-4 text-xs text-[#D4AF37]">✤</span>
+        <span class="absolute bottom-4 right-4 text-xs text-[#D4AF37]">✤</span>
 
-        <!-- Header Label & Family Title -->
-        <div class="space-y-2">
-          <span class="font-sans text-xs uppercase tracking-[0.25em] text-royal-gold font-semibold block">
+        <div class="space-y-1">
+          <span class="font-sans text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-bold block" data-i18n="welcomed_by">
             Warmly Welcomed By
           </span>
-          <h3 class="font-serif italic text-3xl sm:text-4xl text-[#8C263E] font-medium pt-1">The Sharma &amp; Verma Families</h3>
+          <h3 class="font-serif italic text-2xl sm:text-3xl text-[#7A001E] font-bold pt-1" data-i18n="family_names">The Subramanian &amp; Ramachandran Families</h3>
         </div>
 
-        <!-- Two Spacious Columns -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-b border-[#E7D6B7]/60 py-8 text-center items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-b border-[#D4AF37]/40 py-6 text-center items-start">
           
-          <!-- Groom's Family Side -->
-          <div class="space-y-3">
-            <span class="font-sans text-[11px] uppercase tracking-widest text-royal-gold font-semibold block">Groom's Family</span>
-            <div class="font-serif text-xl text-royal-green font-semibold">Smt. Sunita &amp; Shri Rajesh Sharma</div>
-            <div class="font-serif italic text-xs text-charcoal-muted pt-1">Grandparents: Late Smt. Kausalya &amp; Late Shri Ramnath Sharma</div>
+          <div class="space-y-2">
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#D4AF37] font-bold block" data-i18n="groom_fam_label">Groom's Family</span>
+            <div class="font-serif text-lg text-[#7A001E] font-bold" data-i18n="groom_parents">Smt. Lakshmi &amp; Shri Subramanian</div>
+            <div class="font-serif italic text-xs text-gray-600 pt-1" data-i18n="groom_grandparents">Grandparents: Late Smt. Visalakshi &amp; Late Shri Sundaram</div>
           </div>
 
-          <!-- Bride's Family Side -->
-          <div class="space-y-3 md:border-l md:border-[#E7D6B7]/60 md:pl-8">
-            <span class="font-sans text-[11px] uppercase tracking-widest text-royal-gold font-semibold block">Bride's Family</span>
-            <div class="font-serif text-xl text-royal-green font-semibold">Smt. Rekha &amp; Shri Vikram Verma</div>
-            <div class="font-serif italic text-xs text-charcoal-muted pt-1">Grandparents: Smt. Savitri &amp; Shri Harishchandra Verma</div>
+          <div class="space-y-2 md:border-l md:border-[#D4AF37]/40 md:pl-6">
+            <span class="font-sans text-[11px] uppercase tracking-widest text-[#D4AF37] font-bold block" data-i18n="bride_fam_label">Bride's Family</span>
+            <div class="font-serif text-lg text-[#7A001E] font-bold" data-i18n="bride_parents">Smt. Saraswathi &amp; Shri Ramachandran</div>
+            <div class="font-serif italic text-xs text-gray-600 pt-1" data-i18n="bride_grandparents">Grandparents: Smt. Kamakshi &amp; Shri Ananthakrishnan</div>
           </div>
 
         </div>
 
-        <!-- Bottom Poetic Greeting Note -->
-        <div class="p-6 rounded-2xl bg-[#FAF6EE] border border-[#E7D6B7]/60">
-          <p class="font-serif italic text-base sm:text-lg text-[#8C263E] leading-relaxed">
+        <div class="p-5 rounded-2xl bg-[#FAF5E8] border border-[#D4AF37]/40">
+          <p class="font-serif italic text-sm sm:text-base text-[#7A001E] leading-relaxed font-medium" data-i18n="hosts_note">
             &quot;With open arms, joyful hearts, and immense gratitude, we warmly invite your presence on our children's wedding.&quot;
           </p>
         </div>
@@ -393,81 +483,59 @@
     </div>
   </section>
 
-  <!-- VENUE & MAP SECTION ("Where We Celebrate" - TRADITIONAL ROYAL GOLD BORDER) -->
+  <!-- VENUE & MAP SECTION -->
   <section id="venue" class="py-20 px-4 sm:px-8 max-w-4xl mx-auto relative z-10 text-center space-y-8">
-    <div class="space-y-3 scroll-reveal">
-      <span class="font-sans text-[11px] uppercase tracking-[0.3em] text-[#6B7C68] font-semibold">VENUE</span>
-      <h2 class="font-cursive text-5xl sm:text-6xl text-[#8C263E] font-medium tracking-wide">Where We Celebrate</h2>
-      <p class="font-serif italic text-lg sm:text-xl text-[#6B7C68] font-light pt-1">The Oberoi Udaivilas, Lake Pichola, Udaipur</p>
+    <div class="space-y-2 scroll-reveal">
+      <span class="font-sans text-[11px] uppercase tracking-[0.3em] text-[#004E64] font-bold" data-i18n="venue_label">VENUE</span>
+      <h2 class="font-cursive text-5xl sm:text-6xl text-[#7A001E] font-medium tracking-wide" data-i18n="where_celebrate">Where We Celebrate</h2>
+      <p class="font-serif italic text-lg sm:text-xl text-[#004E64] font-medium" data-i18n="hero_venue">Taj Falaknuma Palace, Hyderabad</p>
     </div>
 
-    <!-- TRADITIONAL ROYAL GOLD BORDER EMBEDDED GOOGLE MAP CARD BOX -->
-    <div class="relative rounded-[2rem] p-1.5 bg-gradient-to-br from-royal-gold via-amber-200 to-royal-gold shadow-luxury max-w-4xl mx-auto scroll-reveal">
-      <div class="relative rounded-[1.75rem] overflow-hidden bg-[#FAF6EE] h-96 sm:h-[420px] w-full border-2 border-ivory-100">
-        
-        <!-- Embedded Google Maps -->
+    <!-- MAP CONTAINER -->
+    <div class="relative rounded-[2rem] p-1.5 bg-gradient-to-br from-[#D4AF37] via-amber-200 to-[#D4AF37] shadow-luxury max-w-4xl mx-auto scroll-reveal">
+      <div class="relative rounded-[1.75rem] overflow-hidden bg-[#FAF5E8] h-96 sm:h-[420px] w-full border-2 border-white">
         <iframe 
-          src="https://maps.google.com/maps?q=The+Oberoi+Udaivilas+Udaipur&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+          src="https://maps.google.com/maps?q=Taj+Falaknuma+Palace+Hyderabad&t=&z=14&ie=UTF8&iwloc=&output=embed" 
           class="w-full h-full border-0 filter saturate-[0.92] contrast-[1.03]" 
           allowfullscreen="" 
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-
-        <!-- Soft Low-Opacity Warm Royal Tint Overlay (Map fully visible) -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#1C352D]/15 via-royal-gold/5 to-transparent pointer-events-none"></div>
-
-        <!-- 4 Traditional Gold Corner Stud Flourishes -->
-        <span class="absolute top-3 left-3 text-xs text-royal-gold pointer-events-none drop-shadow-sm font-serif">✤</span>
-        <span class="absolute top-3 right-3 text-xs text-royal-gold pointer-events-none drop-shadow-sm font-serif">✤</span>
-        <span class="absolute bottom-3 left-3 text-xs text-royal-gold pointer-events-none drop-shadow-sm font-serif">✤</span>
-        <span class="absolute bottom-3 right-3 text-xs text-royal-gold pointer-events-none drop-shadow-sm font-serif">✤</span>
-
+        <div class="absolute inset-0 bg-gradient-to-t from-[#7A001E]/15 via-transparent to-transparent pointer-events-none"></div>
       </div>
     </div>
 
-    <!-- GET DIRECTIONS CTA BUTTON -->
     <div class="pt-2 scroll-reveal">
       <a 
-        href="https://maps.google.com/?q=The+Oberoi+Udaivilas+Udaipur" 
+        href="https://maps.google.com/?q=Taj+Falaknuma+Palace+Hyderabad" 
         target="_blank" 
-        class="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#8C263E] text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold rounded-full shadow-luxury hover:scale-105 transition-all border border-royal-gold/40">
-        <i data-lucide="navigation" class="w-4 h-4 text-royal-gold"></i>
-        <span>Get Directions</span>
+        class="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#7A001E] text-white font-sans text-xs uppercase tracking-[0.2em] font-semibold rounded-full shadow-luxury hover:scale-105 transition-all border border-[#D4AF37]">
+        <i data-lucide="navigation" class="w-4 h-4 text-[#D4AF37]"></i>
+        <span data-i18n="get_directions">Get Directions</span>
       </a>
     </div>
-
   </section>
 
-  <!-- LUXURY ROYAL FOOTER (MATCHING USER REFERENCE AESTHETIC WITH ROYAL EMERALD THEME) -->
-  <footer class="py-20 px-4 bg-gradient-to-b from-[#1C352D] via-[#12241D] to-[#0F211A] text-ivory-100 border-t-2 border-royal-gold/60 text-center relative z-10 overflow-hidden">
-    <div class="max-w-2xl mx-auto space-y-6 flex flex-col items-center scroll-reveal">
-      
-      <!-- Top Label -->
-      <div class="text-xs sm:text-sm uppercase tracking-[0.35em] text-royal-gold font-sans font-semibold">
+  <!-- LUXURY FOOTER -->
+  <footer class="py-16 px-4 bg-gradient-to-b from-[#5A0016] via-[#450011] to-[#30000C] text-white border-t-2 border-[#D4AF37]/60 text-center relative z-10 overflow-hidden">
+    <div class="max-w-2xl mx-auto space-y-4 flex flex-col items-center scroll-reveal">
+      <div class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-sans font-bold" data-i18n="footer_love">
         WITH LOVE &amp; BLESSINGS
       </div>
 
-      <!-- Main Cursive Couple Names -->
-      <h2 class="font-cursive text-6xl sm:text-7xl md:text-8xl text-ivory-100 font-medium tracking-wide drop-shadow-md py-1">
-        Aarav <span class="font-cursive text-royal-gold text-4xl sm:text-6xl font-normal">weds</span> Ananya
+      <h2 class="font-cursive text-5xl sm:text-6xl md:text-7xl text-white font-medium tracking-wide drop-shadow-md py-1">
+        <span data-i18n="groom_name">Karthik</span> <span class="font-cursive text-[#D4AF37] text-3xl sm:text-5xl font-normal" data-i18n="weds_label">weds</span> <span data-i18n="bride_name">Meenakshi</span>
       </h2>
 
-      <!-- Subtle Gold Floral Emblem -->
-      <div class="text-royal-gold text-lg font-serif">
-        ❀
-      </div>
+      <div class="text-[#D4AF37] text-lg font-serif">❀</div>
 
-      <!-- Wedding Date -->
-      <div class="font-serif italic text-xl sm:text-2xl text-ivory-200 font-light tracking-wide">
+      <div class="font-serif italic text-lg sm:text-xl text-white/90 font-light" data-i18n="hero_date">
         28th November 2026
       </div>
 
-      <!-- Wedding Hashtag -->
-      <div class="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-royal-gold font-semibold pt-1">
-        #AARAVWEDSANANYA
+      <div class="font-sans text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-bold pt-1" data-i18n="hashtag">
+        #KARTHIKWEDSMEENAKSHI
       </div>
-
     </div>
   </footer>
 
